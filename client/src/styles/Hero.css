@@ -1,0 +1,121 @@
+.hero {
+  background: #f9f9f9;
+  padding: 4rem 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-buttons button {
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.hero-buttons .start-free {
+  background: #333;
+  color: #fff;
+}
+
+.hero-buttons .read-docs {
+  background: #fff;
+  color: #333;
+  border: 1px solid #333;
+}
+
+.hero-buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Hero Image Carousel Styling */
+.hero-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Previous and Next Buttons */
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 2rem;
+  transition: background 0.3s ease;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-image {
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+}
