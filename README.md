@@ -1,0 +1,1 @@
+-- A minimal design attempt was made using React
