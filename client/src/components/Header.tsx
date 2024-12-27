@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import swordIcon from '../assets/images/sword.png'; // Görselin import edilmesi
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,30 +12,37 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="header">
-      <div className="container">
-        <div className="logo">John J. English Teacher & Jesus Lover</div>
-        <div className="menu-icon" onClick={toggleMenu}>
-          {isMenuOpen ? (
-            <FontAwesomeIcon icon={faTimes} className="close-icon" />
-          ) : (
-            <FontAwesomeIcon icon={faBars} className="hamburger-icon" />
-          )}
-        </div>
-        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#docs">Docs</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div className="auth-buttons">
-            <button className="sign-in">Sign In</button>
-            <button className="sign-up">Sign Up</button>
+    <>
+      <header className="header">
+        <div className="container">
+          {/* Logo Bölümü */}
+          <div className="logo">
+            burakkanber
+            <img src={swordIcon} alt="Sword Icon" /> {/* Kılıç Görseli */}
           </div>
-        </nav>
+          {/* Menü İkonu */}
+          <div className="menu-icon" onClick={toggleMenu}>
+            {isMenuOpen ? (
+              <FontAwesomeIcon icon={faTimes} className="close-icon" />
+            ) : (
+              <FontAwesomeIcon icon={faBars} className="hamburger-icon" />
+            )}
+          </div>
+          {/* Navigasyon */}
+          <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+            <ul>
+              <li><a href="#news">news</a></li>
+              <li><a href="#buymecoffee">buy me coffee</a></li>
+              <li><a href="#docs">idk</a></li>
+              <li><a href="#contact">contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div className="scrolling-header">
+        <p>deneme deneme deneme deneme deneme deneme deneme deneme deneme deneme</p>
       </div>
-    </header>
+    </>
   );
 };
 

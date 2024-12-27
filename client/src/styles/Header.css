@@ -143,3 +143,46 @@
     margin-bottom: 0.5rem;
   }
 }
+
+/* General Header styles remain unchanged */
+
+.scrolling-header {
+  background-color: #f4f4f4;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: center;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  border-top: 1px solid #ddd;
+}
+
+.scrolling-header p {
+  display: inline-block;
+  animation: scroll-text 10s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+}
+
+.logo img {
+  width: 30px; /* Görselin boyutu */
+  height: auto;
+  margin-left: 10px;
+  position: relative;
+}
+
