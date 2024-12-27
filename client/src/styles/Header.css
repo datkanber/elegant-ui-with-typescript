@@ -144,32 +144,50 @@
   }
 }
 
-/* General Header styles remain unchanged */
-
 .scrolling-header {
-  background-color: #f4f4f4;
-  color: #333;
-  font-size: 0.9rem;
-  text-align: center;
-  overflow: hidden;
-  padding: 0.5rem 0;
-  border-top: 1px solid #ddd;
+  position: fixed; /* Navbar altında sabit */
+  top: 60px; /* Navbar yüksekliğine göre ayarla */
+  left: 0;
+  width: 100%;
+  overflow: hidden; /* Taşan içerikleri gizle */
+  background-color: #c2cbe3a8; /* İsteğe bağlı arka plan */
+  z-index: 1000;
+  border-bottom: 6px solid #A4D7E6; /* İsteğe bağlı */
 }
 
-.scrolling-header p {
-  display: inline-block;
-  animation: scroll-text 10s linear infinite;
-  white-space: nowrap;
+.scrolling-header ul {
+  display: flex; /* Flex düzeni ile yatay dizilim */
+  gap: 30px; /* Elemanlar arasında boşluk */
+  animation: scroll-text 20s linear infinite; /* Kesintisiz akış */
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
+.scrolling-header li {
+  white-space: nowrap; /* Metinlerin taşmasını engelle */
+}
+
+.scrolling-header a {
+  text-decoration: none;
+  color: #000609;
+  font-size: 1.04rem;
+}
+
+.scrolling-header a:hover {
+  text-decoration: underline;
+}
+
+/* Sonsuz döngü için animasyon */
 @keyframes scroll-text {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0); /* Başlangıç pozisyonu */
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-100%); /* Tüm içerik ekranın dışına taşınır */
   }
 }
+
 
 .logo {
   display: flex;
@@ -180,7 +198,7 @@
 }
 
 .logo img {
-  width: 30px; /* Görselin boyutu */
+  width: 40px; /* Görselin boyutu */
   height: auto;
   margin-left: 10px;
   position: relative;
